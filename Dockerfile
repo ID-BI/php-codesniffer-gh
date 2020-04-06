@@ -10,7 +10,7 @@ LABEL repository="https://github.com/ID-BI/php-lint-gh-action"
 LABEL homepage="https://github.com/ID-BI/php-lint-gh-action"
 LABEL maintainer="Nick Aguilar <nick.aguilar@idbi.pe>"
 
-RUN mkdir /phpcs && cd /phpcs &&composer global require --quiet squizlabs/php_codesniffer && ln -s /phpcs/vendor/bin/phpcs /usr/local/bin/phpcs && ln -s /phpcs/vendor/bin/phpcbf /usr/local/bin/phpcbf
+RUN mkdir /phpcs && cd /phpcs &&composer require --quiet squizlabs/php_codesniffer && ln -s /phpcs/vendor/bin/phpcs /usr/local/bin/phpcs && ln -s /phpcs/vendor/bin/phpcbf /usr/local/bin/phpcbf
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 RUN chmod +x /entrypoint.sh
